@@ -5,8 +5,13 @@ object caballero {
 	var position = game.origin()
 	var anterior
 	
-	method image() = "caballero.png"
+	method image() = "caballero2.png"
 	method position() = position
+	
+//	method morir() {
+//		vivo = false
+//		game.addVisual(pantallaDerrota)
+//	}
 	
 	method subir(){
 		anterior = position
@@ -44,7 +49,7 @@ object enemigo {
 	var position = game.at(15,7)
 	var anterior
 	
-	method image() = "minotauro.png"
+	method image() = "minotauro2.png"
 	method position() = position
 	
 	method perseguir(destino) {
@@ -63,6 +68,10 @@ object enemigo {
 	}
 	method volver(){
 		position = anterior
+	}
+	
+	method matar(){
+		game.say(self,"¡Moriste rey!")
 	}
 	
 	method subir(){
@@ -90,6 +99,14 @@ object enemigo {
 object muro {
 	var position = game.center()
 	
-	method image() = "muro.png"
+	method image() = "piedra2.png"
 	method position() = position
 }
+
+//object pantallaDerrota{
+//	var position = game.at(1,1)
+//	
+//	method image() = "suelo4.jpg"
+//	method position() = position
+//	
+//}

@@ -6,7 +6,7 @@ object laberinto {
 		game.width(17)
 		game.height(10)
 		game.title("El laberinto del minotauro")
-		game.boardGround("suelo.jpg")
+		game.boardGround("suelo3.jpg")
 		game.addVisual(caballero)
 		game.addVisual(enemigo)
 		game.addVisual(muro)
@@ -21,6 +21,7 @@ object laberinto {
 		keyboard.left().onPressDo{enemigo.perseguir(caballero.position())}
 		
 		game.whenCollideDo(muro, { elemento => elemento.volver()})
+		game.whenCollideDo(caballero, {elemento => elemento.matar()})
 		
 		}
 	method iniciar(){
