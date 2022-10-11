@@ -42,26 +42,46 @@ object caballero {
 
 object enemigo {
 	var position = game.at(15,7)
+	var anterior
 	
 	method image() = "minotauro.png"
 	method position() = position
 	
-	method perseguir(){
+	method perseguir(destino) {
+		if (position.x()>destino.x()){
+			self.izquierda()
+		}
+		else if (position.x()<destino.x()){
+			self.derecha()
+		}
+		else if (position.y() > destino.y()){
+			self.bajar()
+		}
+		else if (position.y() < destino.y()){
+			self.subir()
+		}
+	}
+	method volver(){
+		position = anterior
 	}
 	
 	method subir(){
+		anterior = position
 		position = position.up(1)
 	}
 	
 	method derecha(){
+		anterior = position
 		position = position.right(1)
 	}
 	
 	method izquierda(){
+		anterior = position
 		position = position.left(1)
 	}
 	
 	method bajar(){
+		anterior = position
 		position = position.down(1)
 	}
 	
