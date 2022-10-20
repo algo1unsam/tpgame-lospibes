@@ -9,8 +9,9 @@ object caballero {
 	method position() = position
 	
 //	method morir() {
-//		vivo = false
 //		game.addVisual(pantallaDerrota)
+//		vivo = false
+//		self.terminar()
 //	}
 	
 	method subir(){
@@ -43,10 +44,13 @@ object caballero {
 	method estaVivo() {
 		return vivo
 	}
+	
+//	method terminar(){
+//	}
 }
 
 object enemigo {
-	var position = game.at(15,7)
+	var position = game.at(game.height()-1,game.width()-1)
 	var anterior
 	
 	method image() = "minotauro2.png"
@@ -72,6 +76,9 @@ object enemigo {
 	
 	method matar(){
 		game.say(self,"¡Moriste rey!")
+//		caballero.morir()
+		game.addVisual(pantallaDerrota)
+		game.onTick(2000,"terminar", {pantallaDerrota.terminar()})
 	}
 	
 	method subir(){
@@ -103,10 +110,12 @@ object muro {
 	method position() = position
 }
 
-//object pantallaDerrota{
-//	var position = game.at(1,1)
-//	
-//	method image() = "suelo4.jpg"
-//	method position() = position
-//	
-//}
+object pantallaDerrota{
+	var position = game.at(1,1)
+	
+	method image() = "fondoDeSangre.png"
+	method position() = position
+	
+	method terminar() = game.stop()
+	
+}
