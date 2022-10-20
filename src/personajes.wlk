@@ -1,8 +1,9 @@
 import wollok.game.*
+import interfaz.*
 
 object caballero {
 	var vivo = true
-	var position = game.origin()
+	var property position = game.at(1,1)
 	var anterior
 	
 	method image() = "caballero2.png"
@@ -17,6 +18,7 @@ object caballero {
 	method subir(){
 		anterior = position
 		position = position.up(1)
+		
 	}
 	
 	method derecha(){
@@ -50,7 +52,7 @@ object caballero {
 }
 
 object enemigo {
-	var position = game.at(game.height()-1,game.width()-1)
+	var property position = game.at(18,8)
 	var anterior
 	
 	method image() = "minotauro2.png"
@@ -63,24 +65,24 @@ object enemigo {
 		else if (position.x()<destino.x()){
 			self.derecha()
 		}
-		else if (position.y() > destino.y()){
+		else if (position.y()>destino.y()){
 			self.bajar()
+			
 		}
-		else if (position.y() < destino.y()){
+		else if (position.y()<destino.y()){
 			self.subir()
-		}
+		}else {game.onCollideDo(self, { objeto => self.matar(objeto)})}
 	}
 	method volver(){
 		position = anterior
 	}
 	
-	method matar(){
+	method matar(objeto){
 		game.say(self,"¡Moriste rey!")
 //		caballero.morir()
 		game.addVisual(pantallaDerrota)
 		game.onTick(2000,"terminar", {pantallaDerrota.terminar()})
 	}
-	
 	method subir(){
 		anterior = position
 		position = position.up(1)
@@ -104,14 +106,12 @@ object enemigo {
 }
 
 object muro {
-	var position = game.center()
-	
+	const position = game.center()	
 	method image() = "piedra2.png"
 	method position() = position
 }
-
 object pantallaDerrota{
-	var position = game.at(1,1)
+	const position = game.at(1,1)
 	
 	method image() = "fondoDeSangre.png"
 	method position() = position
