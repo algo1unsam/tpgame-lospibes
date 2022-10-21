@@ -36,12 +36,10 @@ object laberinto {
 		keyboard.right().onPressDo{enemigo.perseguir(caballero.position())}
 		keyboard.left().onPressDo{caballero.izquierda()}
 		keyboard.left().onPressDo{enemigo.perseguir(caballero.position())}
-//		keyboard.left().onPressDo{game.onTick(2000,"perseguir", {enemigo.perseguir(caballero.position())})}
+	//	keyboard.left().onPressDo{game.onTick(2000,"perseguir", {enemigo.perseguir(caballero.position())})}
 	//	game.onTick(2000,"persiguiendo", {enemigo.perseguir(caballero.position())})
 		game.whenCollideDo(muro, { elemento => elemento.volver()})		
-			
-	//	game.onCollideDo(caballero, {enemigo => enemigo.matar()})
-		
+					
 		}
 	method iniciar(){
 		caballero.iniciar()

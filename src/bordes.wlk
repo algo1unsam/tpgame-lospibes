@@ -7,7 +7,7 @@ class Arbusto {
 		game.whenCollideDo(self, { objeto => self.empuja(objeto) })
 	}
 
-	method image() = "fence02.png"
+	method image() = "ladrillos.png"
 	method empuja(objeto)
 }
 

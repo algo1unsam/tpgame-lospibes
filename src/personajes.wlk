@@ -59,6 +59,7 @@ object enemigo {
 	method position() = position
 	
 	method perseguir(destino) {
+		
 		if (position.x()>destino.x()){
 			self.izquierda()
 		}
@@ -71,8 +72,9 @@ object enemigo {
 		}
 		else if (position.y()<destino.y()){
 			self.subir()
-		}else {game.onCollideDo(self, { objeto => self.matar(objeto)})}
-	}
+		}
+	
+		}
 	method volver(){
 		position = anterior
 	}
