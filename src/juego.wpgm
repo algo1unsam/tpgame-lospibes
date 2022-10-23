@@ -6,4 +6,5 @@ program juego {
 	laberinto.iniciar()
 	game.start()
 	
+
 }

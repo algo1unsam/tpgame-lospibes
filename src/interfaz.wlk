@@ -16,30 +16,33 @@ object laberinto {
 //		game.addVisualIn(muro,game.at(2,6))
 		game.addVisualIn(muro,game.at(2,8))
 
-//ARBUSTOS
+//LadrilloS
 		const ancho = game.width() - 1
 		const largo = game.height() - 1
 	
-		(1 .. ancho-1).forEach { n => new ArbustoAbajo(position = new Position(x = n, y = 0)).dibujar() } // bordeAbajo
-		(1 .. ancho-1).forEach { n => new ArbustoArriba(position = new Position(x =n, y = largo)).dibujar() } // bordeArriba 
-		(0 .. largo).forEach { n => new ArbustoIzquierda(position = new Position(x =0, y = n)).dibujar() } // bordeIzq 
-		(0 .. largo).forEach { n => new ArbustoDerecha(position = new Position(x =ancho, y = n)).dibujar() } // bordeDer
+		(1 .. ancho-1).forEach { n => new LadrilloAbajo(position = new Position(x = n, y = 0)).dibujar() } // bordeAbajo
+		(1 .. ancho-1).forEach { n => new LadrilloArriba(position = new Position(x =n, y = largo)).dibujar() } // bordeArriba 
+		(0 .. largo).forEach { n => new LadrilloIzquierda(position = new Position(x =0, y = n)).dibujar() } // bordeIzq 
+		(0 .. largo).forEach { n => new LadrilloDerecha(position = new Position(x =ancho, y = n)).dibujar() } // bordeDer
 		
 		keyboard.up().onPressDo{caballero.subir()}
-	//	keyboard.up().onPressDo{enemigo.perseguir(caballero.position())}
+		keyboard.w().onPressDo{caballero.subir()}
 		keyboard.up().onPressDo{enemigo.perseguir(caballero.position())}
+		keyboard.w().onPressDo{enemigo.perseguir(caballero.position())}
 		keyboard.down().onPressDo{caballero.bajar()}
+		keyboard.s().onPressDo{caballero.bajar()}
 		keyboard.down().onPressDo{enemigo.perseguir(caballero.position())}
-	//	keyboard.down().onPressDo{enemigo.perseguir(caballero.position())}
+		keyboard.s().onPressDo{enemigo.perseguir(caballero.position())}
 		keyboard.right().onPressDo{caballero.derecha()}
-	//	keyboard.right().onPressDo{enemigo.perseguir(caballero.position())}
+		keyboard.d().onPressDo{caballero.derecha()}
 		keyboard.right().onPressDo{enemigo.perseguir(caballero.position())}
+		keyboard.d().onPressDo{enemigo.perseguir(caballero.position())}
 		keyboard.left().onPressDo{caballero.izquierda()}
+		keyboard.a().onPressDo{caballero.izquierda()}
 		keyboard.left().onPressDo{enemigo.perseguir(caballero.position())}
-	//	keyboard.left().onPressDo{game.onTick(2000,"perseguir", {enemigo.perseguir(caballero.position())})}
-	//	game.onTick(2000,"persiguiendo", {enemigo.perseguir(caballero.position())})
+		keyboard.a().onPressDo{enemigo.perseguir(caballero.position())}
 		game.whenCollideDo(muro, { elemento => elemento.volver()})		
-					
+		game.onCollideDo(enemigo, {elemento => elemento.morir()})
 		}
 	method iniciar(){
 		caballero.iniciar()

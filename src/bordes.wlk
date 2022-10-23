@@ -1,5 +1,5 @@
 import wollok.game.*
-class Arbusto {
+class Ladrillo {
 	var property position
 	
 	method dibujar() {
@@ -9,30 +9,31 @@ class Arbusto {
 
 	method image() = "ladrillos.png"
 	method empuja(objeto)
+	method matar(){}
 }
 
-class ArbustoArriba inherits Arbusto {
+class LadrilloArriba inherits Ladrillo {
 		
 	override method empuja(objeto) {
 		objeto.volver()
 	}
 }
 
-class ArbustoAbajo inherits Arbusto {
+class LadrilloAbajo inherits Ladrillo {
 		
 	override method empuja(objeto) {
 		objeto.volver()
 	}
 }
 
-class ArbustoIzquierda inherits Arbusto {
+class LadrilloIzquierda inherits Ladrillo {
 	
 	override method empuja(objeto) {
 		objeto.volver()
 	}
 }
 
-class ArbustoDerecha inherits Arbusto {
+class LadrilloDerecha inherits Ladrillo {
 		
 	override method empuja(objeto) {
 		objeto.volver()

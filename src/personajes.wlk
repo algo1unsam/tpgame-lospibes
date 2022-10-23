@@ -46,7 +46,10 @@ object caballero {
 	method estaVivo() {
 		return vivo
 	}
-	
+	method morir(){
+		game.addVisual(pantallaDerrota)
+		game.onTick(2000,"terminar", {pantallaDerrota.terminar()})
+	}
 //	method terminar(){
 //	}
 }
@@ -79,7 +82,7 @@ object enemigo {
 		position = anterior
 	}
 	
-	method matar(objeto){
+	method morir(){
 		game.say(self,"¡Moriste rey!")
 //		caballero.morir()
 		game.addVisual(pantallaDerrota)
