@@ -1,4 +1,8 @@
 import wollok.game.*
+
+object salida{
+	method image()= 'salida.png'
+}
 class Ladrillo {
 	var property position
 	

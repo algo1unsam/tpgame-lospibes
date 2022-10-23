@@ -2,15 +2,16 @@ import wollok.game.*
 import interfaz.*
 
 object piedra {
-	
+
+  var property position=self.poner()
   method image() = "piedra2.png"
   method poner() {
     const x = (1.. game.width()-1).anyOne() 
     const y = (1.. game.height()-1).anyOne() 
-    return game.at(x,y)
+    position=game.at(x,y)
+  	return position
+    }
     
-     
-  }
 }
 object caballero {
 	var vivo = true
