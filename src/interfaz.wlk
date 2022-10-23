@@ -11,10 +11,9 @@ object laberinto {
 		game.addVisual(caballero)
 		game.addVisual(enemigo)
 
-//		game.addVisualIn(muro,game.at(2,2))
-//		game.addVisualIn(muro,game.at(2,4))
-//		game.addVisualIn(muro,game.at(2,6))
-		game.addVisualIn(muro,game.at(2,8))
+		game.addVisualIn(piedra,piedra.poner())
+		game.onTick(1000, "movimiento", {piedra.poner()})
+	
 
 //LadrilloS
 		const ancho = game.width() - 1
@@ -41,7 +40,7 @@ object laberinto {
 		keyboard.a().onPressDo{caballero.izquierda()}
 		keyboard.left().onPressDo{enemigo.perseguir(caballero.position())}
 		keyboard.a().onPressDo{enemigo.perseguir(caballero.position())}
-		game.whenCollideDo(muro, { elemento => elemento.volver()})		
+		game.whenCollideDo(piedra, { elemento => elemento.volver()})		
 		game.onCollideDo(enemigo, {elemento => elemento.morir()})
 		}
 	method iniciar(){

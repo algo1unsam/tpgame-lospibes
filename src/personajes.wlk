@@ -1,6 +1,17 @@
 import wollok.game.*
 import interfaz.*
 
+object piedra {
+	
+  method image() = "piedra2.png"
+  method poner() {
+    const x = (1.. game.width()-1).anyOne() 
+    const y = (1.. game.height()-1).anyOne() 
+    return game.at(x,y)
+    
+     
+  }
+}
 object caballero {
 	var vivo = true
 	var property position = game.at(1,1)
@@ -9,12 +20,7 @@ object caballero {
 	method image() = "caballero2.png"
 	method position() = position
 	
-//	method morir() {
-//		game.addVisual(pantallaDerrota)
-//		vivo = false
-//		self.terminar()
-//	}
-	
+
 	method subir(){
 		anterior = position
 		position = position.up(1)
