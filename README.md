@@ -1,4 +1,4 @@
-# Nombre del juego (<- borrar y completar)
+# El ladbernto del minotauro
 
 ## Equipo de desarrollo
 
