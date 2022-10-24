@@ -6,8 +6,8 @@ object piedra {
   var property position=self.poner()
   method image() = "piedra2.png"
   method poner() {
-    const x = (1.. game.width()-1).anyOne() 
-    const y = (1.. game.height()-1).anyOne() 
+    const x = (2.. game.width()-2).anyOne() 
+    const y = (2.. game.height()-2).anyOne() 
     position=game.at(x,y)
   	return position
     }

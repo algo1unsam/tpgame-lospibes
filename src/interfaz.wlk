@@ -10,7 +10,7 @@ object laberinto {
 		game.boardGround("floor10.jpg")
 		game.addVisual(caballero)
 		game.addVisual(enemigo)
-		game.addVisualIn(salida,salida.position())
+	//	game.addVisualIn(salida,salida.position())
 		game.addVisualIn(piedra,piedra.poner())
 		//game.onTick(1000, "movimiento", {piedra.poner()})
 
