@@ -1,4 +1,4 @@
-# El ladbernto del minotauro
+# El laberinto del minotauro
 
 ## Equipo de desarrollo
 
