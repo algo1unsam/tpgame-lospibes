@@ -8,7 +8,7 @@ object laberinto {
 		game.width(20)
 		game.height(10)
 		game.title("El laberinto del minotauro")
-		game.boardGround("floor10.jpg")
+		game.boardGround("suelo.jpg")
 		game.addVisual(caballero)
 		game.addVisual(enemigo)
 		game.addVisual(salida)

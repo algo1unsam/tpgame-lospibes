@@ -1,11 +1,36 @@
-//describe 'test laberinto del minotauro'
-//	test "el minotauro colisiona con el caballero haciendolo perder" {
-//		assert.that(true)
-//	}
-//	
-//	test "el caballero sale del laberinto"{}
-//	
-//	test "ningún personaje traspasa los obstaculos"{}
-//	
-//	
-//	test "el personaje garra las cosas pero el minotauro no"{}
+import wollok.game.*
+import personajes.*
+import bordes.*
+import interfaz.*
+import accesorios.*
+
+describe "Test del laberinto"{
+	method initialize(){
+		game.clear()
+	}
+//test "El caballero no traspasa los obstaculos"{}
+
+test "El caballero agarra el anillo" {
+	game.addVisual(caballero)
+	game.addVisual(anillo)
+	caballero.agarrar(anillo)
+	assert.that(caballero.reliquias().contains(anillo))
+
+}
+test "El caballero agarra el diamante" {
+	game.addVisual(caballero)
+	game.addVisual(diamante)
+	caballero.agarrar(diamante)
+	assert.that(caballero.reliquias().contains(diamante))
+
+}
+test "El caballero agarra el collar" {
+	game.addVisual(caballero)
+	game.addVisual(collar)
+	caballero.agarrar(collar)
+	assert.that(caballero.reliquias().contains(collar))
+
+}
+//test "El caballero sale del laberinto"{}
+//test "El minotauro no agarra las reliquias"{}
+}

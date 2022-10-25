@@ -9,7 +9,7 @@ object caballero {
 	var property reliquias = []
 	var anterior
 	
-	method image() = "caballero2.png"
+	method image() = "caballero.png"
 	method position() = position
 	
 	method agarrar(reliquia){
@@ -73,7 +73,7 @@ object enemigo {
 	var property position = game.at(17,5)
 	var anterior
 	
-	method image() = "minotauro2.png"
+	method image() = "minotauro.png"
 	method position() = position
 	
 

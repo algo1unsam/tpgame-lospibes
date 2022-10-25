@@ -35,14 +35,14 @@ class LadrilloDerecha inherits Ladrillo {
 
 class Muro inherits Ladrillo {
 	
-	override method image() = "piedra2.png"
+	override method image() = "piedra.png"
 
 }
 
 object salida{
 	const property position = game.at(19,5)
 	
-	method image()= 'salidaNueva.png'
+	method image()= 'salida.png'
 	
 	method colisionar(colisionado){
 		
