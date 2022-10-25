@@ -16,11 +16,16 @@ import interfaz.*
 object caballero {
 	var vivo = true
 	var property position = game.at(1,1)
+	var reliquias = []
 	var anterior
 	
 	method image() = "caballero2.png"
 	method position() = position
 	
+	method agarrar(reliquia){
+		reliquias.add(reliquia)
+		game.removeVisual(reliquia)
+	}
 
 	method subir(){
 		anterior = position

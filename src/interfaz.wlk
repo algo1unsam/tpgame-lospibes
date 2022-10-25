@@ -1,6 +1,7 @@
 import wollok.game.*
 import personajes.*
 import bordes.*
+import accesorios.*
 
 object laberinto {
 	method configurar(){
@@ -11,6 +12,9 @@ object laberinto {
 		game.addVisual(caballero)
 		game.addVisual(enemigo)
 		game.addVisual(salida)
+		game.addVisual(collar)
+		game.addVisual(anillo)
+		game.addVisual(diamante)
 
 
 //Posiciones de Ladrillos
