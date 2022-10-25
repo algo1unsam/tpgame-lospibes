@@ -53,12 +53,13 @@ object caballero {
 	method estaVivo() {
 		return vivo
 	}
-	method morir(){
-		game.addVisual(pantallaDerrota)
-		game.onTick(2000,"terminar", {pantallaDerrota.terminar()})
-	}
-//	method terminar(){
+//	method morir(){
+//		game.addVisual(pantallaDerrota)
+//		game.onTick(2000,"terminar", {pantallaDerrota.terminar()})
 //	}
+	method colisionar(colisionado){
+		enemigo.matar()
+	}
 }
 
 object enemigo {
@@ -93,9 +94,11 @@ object enemigo {
 		position = anterior
 	}
 	
-	method morir(){
+	method colisionar(colisionado){
+	}
+	
+	method matar(){
 		game.say(self,"¡Moriste rey!")
-//		caballero.morir()
 		game.addVisual(pantallaDerrota)
 		game.onTick(2000,"terminar", {pantallaDerrota.terminar()})
 	}
