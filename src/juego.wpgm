@@ -4,6 +4,10 @@ import interfaz.*
 program juego {
 	laberinto.configurar()
 	laberinto.iniciar()
+	const suspenso = game.sound("musicaSuspenso.mp3")
+	const victoria = game.sound("sonidoVictoria.mp3")
+	suspenso.shouldLoop(true)
+	game.schedule(500, { suspenso.play()} )
 	game.start()
 	
 

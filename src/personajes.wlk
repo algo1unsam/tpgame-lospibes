@@ -2,6 +2,7 @@ import wollok.game.*
 import interfaz.*
 import accesorios.*
 
+
 object caballero {
 	var vivo = true
 	var property position = game.at(1,1)
