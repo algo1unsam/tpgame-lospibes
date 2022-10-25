@@ -1,6 +1,11 @@
-
-test "testX" {
-
-	assert.that(true)
-
-}
+describe 'test laberinto del minotauro'
+	test "el minotauro colisiona con el caballero haciendolo perder" {
+		assert.that(true)
+	}
+	
+	test "el caballero sale del laberinto"{}
+	
+	test "ningún personaje traspasa los obstaculos"{}
+	
+	
+	test "el personaje garra las cosas pero el minotauro no"{}
