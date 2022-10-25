@@ -40,11 +40,9 @@ class Muro inherits Ladrillo {
 }
 
 object salida{
-	var position = game.at(19,5)
+	const property position = game.at(19,5)
 	
 	method image()= 'salidaNueva.png'
-	
-	method position() = position
 	
 	method colisionar(colisionado){
 		

@@ -2,18 +2,6 @@ import wollok.game.*
 import interfaz.*
 import accesorios.*
 
-//object piedra {
-//
-//  var property position=self.poner()
-//  method image() = "piedra2.png"
-//  method poner() {
-//    const x = (2.. game.width()-2).anyOne() 
-//    const y = (2.. game.height()-2).anyOne() 
-//    position=game.at(x,y)
-//  	return position
-//    }
-//    
-//}
 object caballero {
 	var vivo = true
 	var property position = game.at(1,1)
@@ -36,25 +24,25 @@ object caballero {
 	method subir(){
 		anterior = position
 		position = position.up(1)
-		enemigo.perseguir(caballero.position())
+		enemigo.perseguir(self.position())
 	}
 	
 	method derecha(){
 		anterior = position
 		position = position.right(1)
-		enemigo.perseguir(caballero.position())
+		enemigo.perseguir(self.position())
 	}
 	
 	method izquierda(){
 		anterior = position
 		position = position.left(1)
-		enemigo.perseguir(caballero.position())
+		enemigo.perseguir(self.position())
 	}
 	
 	method bajar(){
 		anterior = position
 		position = position.down(1)
-		enemigo.perseguir(caballero.position())
+		enemigo.perseguir(self.position())
 	}
 	
 	method volver(){
@@ -73,8 +61,11 @@ object caballero {
 	}
 	method escapar(){
 		game.addVisual(pantallaVictoria)
-		game.onTick(2000,"terminar", {pantallaVictoria.terminar()})
+		game.addVisual(textoCosas)
+		game.onTick(5000,"terminar", {pantallaVictoria.terminar()})
 	}
+	method matar(){}
+	method perseguir(){enemigo.perseguir(self.position())}
 }
 
 object enemigo {
@@ -106,8 +97,7 @@ object enemigo {
 		position = anterior
 	}
 	
-	method colisionar(colisionado){
-	}
+	method colisionar(colisionado){}
 	
 	method matar(){
 		game.say(self,"¡Moriste rey!")
