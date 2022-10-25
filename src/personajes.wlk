@@ -25,22 +25,25 @@ object caballero {
 	method subir(){
 		anterior = position
 		position = position.up(1)
-		
+		enemigo.perseguir(caballero.position())
 	}
 	
 	method derecha(){
 		anterior = position
 		position = position.right(1)
+		enemigo.perseguir(caballero.position())
 	}
 	
 	method izquierda(){
 		anterior = position
 		position = position.left(1)
+		enemigo.perseguir(caballero.position())
 	}
 	
 	method bajar(){
 		anterior = position
 		position = position.down(1)
+		enemigo.perseguir(caballero.position())
 	}
 	
 	method volver(){
@@ -69,10 +72,7 @@ object enemigo {
 	method image() = "minotauro2.png"
 	method position() = position
 	
-	method perseguir1(destino){
-		self.perseguir(destino)
-		//self.perseguir(destino)
-	}
+
 	method perseguir(destino) {
 		
 		if (position.x()>destino.x()){
