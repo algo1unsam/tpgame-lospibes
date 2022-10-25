@@ -1,5 +1,6 @@
 import wollok.game.*
 import interfaz.*
+import accesorios.*
 
 //object piedra {
 //
@@ -24,6 +25,11 @@ object caballero {
 	
 	method agarrar(reliquia){
 		reliquias.add(reliquia)
+		if (reliquia == collar){
+			game.say(self, "Conseguí el collar!")
+		}else if (reliquia == anillo){
+			game.say(self, "Conseguí el anillo!")
+		}else {game.say(self, "Conseguí el diamante!")}
 		game.removeVisual(reliquia)
 	}
 

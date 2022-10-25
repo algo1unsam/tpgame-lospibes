@@ -22,8 +22,7 @@ object laberinto {
 		const largo = game.height() - 1
 
 //Posiciones de las piedras		
-		const listaDePos = [[1,3],[2,3],[3,3],[3,4],[2,7],[2,8],[3,8],[4,8],[6,4],[6,5],[6,6],
-			[7,6],[9,2],[10,2],[10,3],[11,5],[14,6],[15,6],[16,6]]
+		const listaDePos = [ [1,3], [2,3], [3,3], [3,4], [6,4], [6,5], [6,6], [7,6], [9,2], [10,2], [10,3], [11,5], [14,6], [15,6], [16,6], [17,6], [18,6], [16,3], [17,3], [18,3]]
 		
 		
 		(1 .. ancho-1).forEach { n => new LadrilloAbajo(position = new Position(x = n, y = 0)).dibujar() } // bordeAbajo
