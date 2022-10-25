@@ -1,18 +1,18 @@
 import wollok.game.*
 import interfaz.*
 
-object piedra {
-
-  var property position=self.poner()
-  method image() = "piedra2.png"
-  method poner() {
-    const x = (2.. game.width()-2).anyOne() 
-    const y = (2.. game.height()-2).anyOne() 
-    position=game.at(x,y)
-  	return position
-    }
-    
-}
+//object piedra {
+//
+//  var property position=self.poner()
+//  method image() = "piedra2.png"
+//  method poner() {
+//    const x = (2.. game.width()-2).anyOne() 
+//    const y = (2.. game.height()-2).anyOne() 
+//    position=game.at(x,y)
+//  	return position
+//    }
+//    
+//}
 object caballero {
 	var vivo = true
 	var property position = game.at(1,1)
@@ -62,12 +62,16 @@ object caballero {
 }
 
 object enemigo {
-	var property position = game.at(18,8)
+	var property position = game.at(17,5)
 	var anterior
 	
 	method image() = "minotauro2.png"
 	method position() = position
 	
+	method perseguir1(destino){
+		self.perseguir(destino)
+		//self.perseguir(destino)
+	}
 	method perseguir(destino) {
 		
 		if (position.x()>destino.x()){
