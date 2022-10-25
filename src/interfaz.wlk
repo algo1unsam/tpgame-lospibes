@@ -25,8 +25,10 @@ object laberinto {
 		(1 .. ancho-1).forEach { n => new LadrilloAbajo(position = new Position(x = n, y = 0)).dibujar() } // bordeAbajo
 		(1 .. ancho-1).forEach { n => new LadrilloArriba(position = new Position(x =n, y = largo)).dibujar() } // bordeArriba 
 		(0 .. largo).forEach { n => new LadrilloIzquierda(position = new Position(x =0, y = n)).dibujar() } // bordeIzq 
-		(0 .. largo).forEach { n => new LadrilloDerecha(position = new Position(x =ancho, y = n)).dibujar() } // bordeDer
+		(0 .. largo-5).forEach { n => new LadrilloDerecha(position = new Position(x =ancho, y = n)).dibujar() } // bordeDer
+		(largo-3 .. largo).forEach { n => new LadrilloDerecha(position = new Position(x =ancho, y = n)).dibujar() }	
 		
+			
 		//listaDePos.forEach { n => new Muro(position = new Position(x =n.get(0), y = n.get(1))).dibujar()}
 		listaDePos.forEach { n => game.addVisual(new Muro(position = new Position(x = n.get(0), y = n.get(1))))} //todas la piedras
 		

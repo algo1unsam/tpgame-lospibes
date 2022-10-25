@@ -61,7 +61,7 @@ object caballero {
 		enemigo.matar()
 	}
 	method escapar(){
-		game.stop()
+		game.onTick(2000,"terminar", {pantallaVictoria.terminar()})
 	}
 }
 
@@ -142,6 +142,7 @@ object pantallaDerrota{
 	
 }
 
-object pantallaDeVictoria{
+object pantallaVictoria{
 	
+	method terminar() = game.stop()
 }
