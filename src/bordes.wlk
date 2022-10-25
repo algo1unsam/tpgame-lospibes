@@ -42,7 +42,7 @@ class Muro inherits Ladrillo {
 object salida{
 	var position = game.at(19,5)
 	
-	method image()= 'stairs10.png'
+	method image()= 'salidaNueva.png'
 	
 	method position() = position
 	

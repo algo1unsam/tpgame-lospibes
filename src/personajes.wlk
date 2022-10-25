@@ -53,10 +53,7 @@ object caballero {
 	method estaVivo() {
 		return vivo
 	}
-//	method morir(){
-//		game.addVisual(pantallaDerrota)
-//		game.onTick(2000,"terminar", {pantallaDerrota.terminar()})
-//	}
+	
 	method colisionar(colisionado){
 		enemigo.matar()
 	}
