@@ -11,6 +11,7 @@ object laberinto {
 		game.addVisual(caballero)
 		game.addVisual(enemigo)
 	//	game.addVisualIn(salida,salida.position())
+		game.addVisual(salida)
 //		game.addVisualIn(piedra,piedra.poner())
 		//game.onTick(1000, "movimiento", {piedra.poner()})
 

@@ -60,6 +60,9 @@ object caballero {
 	method colisionar(colisionado){
 		enemigo.matar()
 	}
+	method escapar(){
+		game.stop()
+	}
 }
 
 object enemigo {
@@ -136,5 +139,9 @@ object pantallaDerrota{
 	method position() = position
 	
 	method terminar() = game.stop()
+	
+}
+
+object pantallaDeVictoria{
 	
 }

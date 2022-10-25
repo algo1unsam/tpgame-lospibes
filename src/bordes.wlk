@@ -1,4 +1,5 @@
 import wollok.game.*
+import personajes.*
 
 class Ladrillo {
 	var property position
@@ -39,5 +40,17 @@ class Muro inherits Ladrillo {
 }
 
 object salida{
+	var position = game.at(18,5)
+	
 	method image()= 'salida.png'
+	
+	method position() = position
+	
+	method colisionar(colisionado){
+		
+		if (colisionado == caballero) {
+			caballero.escapar()
+		}
+	}
+	
 }
