@@ -51,3 +51,31 @@ object laberinto {
 		caballero.iniciar()
 	}
 }
+
+object pantallaDerrota{
+	const position = game.at(1,1)
+	
+	method image() = "fondoDeSangre.png"
+	method position() = position
+	
+	method terminar() = game.stop()
+	
+}
+
+object pantallaVictoria{
+	var position = game.center()
+	
+//	method image() = "nombreDelFondo"
+	method terminar() = game.stop()
+	method position() = position
+	method text() { 
+		return	if (caballero.reliquias().isEmpty()){"Ninguno"}
+		else if (caballero.reliquias().countains(collar)and(caballero.reliquias().contains(anillo))and(caballero.reliquias().contains(diamante))){"Collar, Anillo y Diamante"}
+		else if (caballero.reliquias().contains(collar) and (caballero.reliquias().contains(anillo))){"Collar y Anillo"}
+		else if (caballero.reliquias().contains(anillo) and (caballero.reliquias().contains(diamante))){"Anillo y Diamante"}
+		else if (caballero.reliquias().contains(diamante)and(caballero.reliquias().contains(collar))) {"Collar y Diamante"}
+		else if (caballero.reliquias().contains(collar)){"Collar"}
+		else if (caballero.reliquias().contains(anillo)) {"Anillo"}
+		else {"Diamante"}
+		}
+}

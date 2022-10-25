@@ -17,7 +17,7 @@ import accesorios.*
 object caballero {
 	var vivo = true
 	var property position = game.at(1,1)
-	var reliquias = []
+	var property reliquias = []
 	var anterior
 	
 	method image() = "caballero2.png"
@@ -72,6 +72,7 @@ object caballero {
 		enemigo.matar()
 	}
 	method escapar(){
+		game.addVisual(pantallaVictoria)
 		game.onTick(2000,"terminar", {pantallaVictoria.terminar()})
 	}
 }
@@ -133,24 +134,8 @@ object enemigo {
 		position = position.down(1)
 	}
 	
-}
-
-object muro {
-	const position = game.center()	
-	method image() = "piedra2.png"
-	method position() = position
-}
-object pantallaDerrota{
-	const position = game.at(1,1)
-	
-	method image() = "fondoDeSangre.png"
-	method position() = position
-	
-	method terminar() = game.stop()
+	method agarrar(nada){
+	}
 	
 }
 
-object pantallaVictoria{
-	
-	method terminar() = game.stop()
-}
