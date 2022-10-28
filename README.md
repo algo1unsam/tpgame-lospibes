@@ -2,19 +2,21 @@
 
 ## Equipo de desarrollo
 
-- Juan Cruz Pelozo
-- Sofía Morales 
+- Alguien
+- Persona
+- etc.
 
 ## Capturas
 
 (agregar)
 
 ## Reglas de Juego / Instrucciones
-El objetivo del juego es sortear los obstáculos que se presentan para salir del laberinto. Idealmente deberías encerrar al minotauro
-para que no te atrape y mueras, te moves con las flechitas. El minotauro te sigue (cuidado)
+
+(Escribirlas)
+
 
 ## Otros
 
-- Algoritmos 1-UNSAM
+- Curso/Facultad
 - Versión de wollok
-- Una vez terminado, no tenemos problemas en que el repositorio sea público
+- Una vez terminado, no tenemos problemas en que el repositorio sea público / queremos manternerlo privado
