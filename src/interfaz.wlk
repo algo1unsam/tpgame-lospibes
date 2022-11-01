@@ -22,18 +22,22 @@ object laberinto {
 		const largo = game.height() - 1
 
 //Posiciones de las piedras		
-		const listaDePos = [ [1,3], [2,3], [3,3], [3,4], [6,4], [6,5], [6,6], [7,6], [9,2], [10,2], [10,3], [11,5], [14,6], [15,6], [16,6], [17,6], [18,6], [16,3], [17,3], [18,3]]
+		const listaDePosiciones = [game.at(1,3), game.at(2,3), game.at(3,3), game.at(3,4),
+			game.at(6,4), game.at(6,5), game.at(6,6), game.at(7,6), game.at(9,2),
+			game.at(10,2), game.at(10,3), game.at(11,5), game.at(14,6), game.at(15,6), 
+			game.at(16,6), game.at(17,6), game.at(18,6), game.at(16,3), game.at(17,3),
+			game.at(18,3)]
 		
 		
-		(1 .. ancho-1).forEach { n => new LadrilloAbajo(position = new Position(x = n, y = 0)).dibujar() } // bordeAbajo
-		(1 .. ancho-1).forEach { n => new LadrilloArriba(position = new Position(x =n, y = largo)).dibujar() } // bordeArriba 
-		(0 .. largo).forEach { n => new LadrilloIzquierda(position = new Position(x =0, y = n)).dibujar() } // bordeIzq 
-		(0 .. largo-5).forEach { n => new LadrilloDerecha(position = new Position(x =ancho, y = n)).dibujar() } // bordeDer
-		(largo-3 .. largo).forEach { n => new LadrilloDerecha(position = new Position(x =ancho, y = n)).dibujar() }	
+		(1 .. ancho-1).forEach { x => new Ladrillo(position = new Position(x = x, y = 0)).dibujar() } // bordeAbajo
+		(1 .. ancho-1).forEach { x => new Ladrillo(position = new Position(x =x, y = largo)).dibujar() } // bordeArriba 
+		(0 .. largo).forEach { y => new Ladrillo(position = new Position(x =0, y = y)).dibujar() } // bordeIzq 
+		(0 .. largo-5).forEach { y => new Ladrillo(position = new Position(x =ancho, y = y)).dibujar() } // bordeDer
+		(largo-3 .. largo).forEach { y => new Ladrillo(position = new Position(x =ancho, y = y)).dibujar() }//esta parte se divide en 2 para poner la salida
 		
 			
-		listaDePos.forEach { n => game.addVisual(new Muro(position = new Position(x = n.get(0), y = n.get(1))))} //todas la piedras
-		
+		listaDePosiciones.forEach { posicion => game.addVisual(new Muro(position = posicion))} 
+			
 		keyboard.up().onPressDo{caballero.subir()}
 		keyboard.w().onPressDo{caballero.subir()}
 		keyboard.down().onPressDo{caballero.bajar()}

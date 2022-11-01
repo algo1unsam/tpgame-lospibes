@@ -4,7 +4,7 @@ import accesorios.*
 
 
 object caballero {
-	var vivo = true
+
 	var property position = game.at(1,1)
 	var property reliquias = []
 	var anterior
@@ -49,13 +49,7 @@ object caballero {
 	method volver(){
 		position = anterior
 	}
-	
-	method iniciar() {
-		vivo = true
-	}
-	method estaVivo() {
-		return vivo
-	}
+
 	
 	method colisionar(colisionado){
 		enemigo.matar()

@@ -10,27 +10,27 @@ describe "Test del laberinto"{
 	}
 //test "El caballero no traspasa los obstaculos"{}
 
-test "El caballero agarra el anillo" {
-	game.addVisual(caballero)
-	game.addVisual(anillo)
-	caballero.agarrar(anillo)
-	assert.that(caballero.reliquias().contains(anillo))
-
-}
-test "El caballero agarra el diamante" {
-	game.addVisual(caballero)
-	game.addVisual(diamante)
-	caballero.agarrar(diamante)
-	assert.that(caballero.reliquias().contains(diamante))
-
-}
-test "El caballero agarra el collar" {
-	game.addVisual(caballero)
-	game.addVisual(collar)
-	caballero.agarrar(collar)
-	assert.that(caballero.reliquias().contains(collar))
-
-}
+//test "El caballero agarra el anillo" {
+//	game.addVisual(caballero)
+//	game.addVisual(anillo)
+//	caballero.agarrar(anillo)
+//	assert.that(caballero.reliquias().contains(anillo))
+//
+//}
+//test "El caballero agarra el diamante" {
+//	game.addVisual(caballero)
+//	game.addVisual(diamante)
+//	caballero.agarrar(diamante)
+//	assert.that(caballero.reliquias().contains(diamante))
+//
+//}
+//test "El caballero agarra el collar" {
+//	game.addVisual(caballero)
+//	game.addVisual(collar)
+//	caballero.agarrar(collar)
+//	assert.that(caballero.reliquias().contains(collar))
+//
+//}
 //test "El caballero sale del laberinto"{}
 //test "El minotauro no agarra las reliquias"{}
 }
