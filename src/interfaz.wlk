@@ -50,7 +50,7 @@ object laberinto {
 		game.onCollideDo(enemigo, {elemento => elemento.colisionar(enemigo)})
 		game.onCollideDo(caballero, {elemento => elemento.colisionar(caballero)})
 		}
-
+}
 object pantallaDerrota{
 	const position = game.at(1,1)
 	
