@@ -6,6 +6,8 @@ import accesorios.*
 object caballero {
 
 	var property position = game.at(1,1)
+	const posicionNivel2 = game.at(18,5)
+	const posicionNivel3 = game.at(1,8)
 	var property reliquias = []
 	var anterior
 	
@@ -19,7 +21,7 @@ object caballero {
 		}else if (reliquia == anillo){
 			game.say(self, "Conseguí el anillo!")
 		}else {game.say(self, "Conseguí el diamante!")}
-		game.removeVisual(reliquia)
+		game.removeVisual(reliquia) 
 	}
 
 	method subir(){
@@ -54,17 +56,28 @@ object caballero {
 	method colisionar(colisionado){
 		enemigo.matar()
 	}
+	
+	method cambiarPosicionInicial(){
+		position = posicionNivel2
+}
+	method cambiarPosicionNivel3(){
+		position = posicionNivel3
+	}
+	
 	method escapar(){
 		game.addVisual(pantallaVictoria)
 		game.addVisual(textoCosas)
 		game.onTick(5000,"terminar", {pantallaVictoria.terminar()})
 	}
+
 	method matar(){}
 	method perseguir(){enemigo.perseguir(self.position())}
 }
 
 object enemigo {
 	var property position = game.at(17,5)
+	const posicionNivel2 = game.at(2,8)
+	const posicionNivel3 = game.at(10,2)
 	var anterior
 	
 	method image() = "minotauro.png"
@@ -120,6 +133,13 @@ object enemigo {
 	}
 	
 	method agarrar(nada){
+	}
+	
+	method cambiarPosicionInicial(){
+		position = posicionNivel2
+	}
+	method cambiarPosicionNivel3(){
+		position = posicionNivel3
 	}
 	
 }
