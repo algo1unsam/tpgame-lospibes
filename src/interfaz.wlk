@@ -193,7 +193,7 @@ object laberinto {
 
 
 object pantallaDerrota{
-	const property position = game.origin
+	const property position = game.origin()
 	method image() = "pantallaDerrota.png"
 	method terminar() = game.stop()
 	
