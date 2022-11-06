@@ -14,9 +14,11 @@ object laberinto {
 		game.boardGround("suelo.jpg")
 
 		keyboard.enter().onPressDo{self.iniciarJuego()}
-		keyboard.num2().onPressDo{self.comoJugar()}
-		keyboard.num3().onPressDo{self.configuracion()}
-		keyboard.num4().onPressDo{self.creditos()}
+		keyboard.j().onPressDo{self.comoJugar()}
+		keyboard.c().onPressDo{self.configuracion()}
+		keyboard.control().onPressDo{self.creditos()}
+		keyboard.h().onPressDo{self.historia()}
+		keyboard.m().onPressDo{game.stop()}
 	}
 		
 	method iniciarJuego(){
@@ -62,24 +64,32 @@ object laberinto {
 		keyboard.d().onPressDo{caballero.derecha()}
 		keyboard.left().onPressDo{caballero.izquierda()}
 		keyboard.a().onPressDo{caballero.izquierda()}
-		
+		keyboard.m().onPressDo{game.stop()}
 		game.onCollideDo(enemigo, {elemento => elemento.colisionar(enemigo)})
 		game.onCollideDo(caballero, {elemento => elemento.colisionar(caballero)})
 		}
 		
 	method comoJugar() {
 			game.removeVisual(pantallaDeInicio)
-			game.addVisual(pantallaDeComoJugar)
+			game.addVisual(pantallaComoJugar)
 			keyboard.backspace().onPressDo{self.configurar()}
 		}
 		
 	method configuracion() {
+		game.removeVisual(pantallaDeInicio)
+			game.addVisual(pantallaConfig)
+			keyboard.backspace().onPressDo{self.configurar()}
 		}
 	
 
 	method creditos() {
 		game.removeVisual(pantallaDeInicio)
 		game.addVisual(pantallaDeCreditos)
+		keyboard.backspace().onPressDo{self.configurar()}
+		}
+		method historia() {
+		game.removeVisual(pantallaDeInicio)
+		game.addVisual(pantallaHistoria)
 		keyboard.backspace().onPressDo{self.configurar()}
 		}
 
@@ -183,11 +193,8 @@ object laberinto {
 
 
 object pantallaDerrota{
-	const position = game.at(1,1)
-	
-	method image() = "fondoDeSangre.png"
-	method position() = position
-	
+	const property position = game.origin
+	method image() = "pantallaDerrota.png"
 	method terminar() = game.stop()
 	
 }
@@ -195,8 +202,7 @@ object pantallaDerrota{
 object pantallaVictoria{
 	const property position = game.origin()
 	method image() = "fondoVictoria.png"
-	method terminar(){game.stop()
-		}
+	method terminar(){game.stop()}
 }
 	
 object textoCosas{

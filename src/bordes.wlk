@@ -8,7 +8,6 @@ class Ladrillo {
 	
 	method dibujar() {
 		position.drawElement(self)
-		//game.whenCollideDo(self, { objeto => objeto.volver() })
 	}
 	method colisionar(colisionado){
 		colisionado.volver()
@@ -22,8 +21,8 @@ class Muro inherits Ladrillo {
 }
 
 object salida inherits Ladrillo(position = game.at(19,5), image = 'salida.png') {
-	var posicionNivel2 = game.at(0,8)
-	var posicionNivel3 = game.at(10,0)
+	const posicionNivel2 = game.at(0,8)
+	const posicionNivel3 = game.at(10,0)
 	method cambiarPosicionInicial(){
 		position = posicionNivel2
 		image = "SalidaNivel2.png"

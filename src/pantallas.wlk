@@ -8,5 +8,7 @@ class Pantalla{
 }
 
 object pantallaDeInicio inherits Pantalla (image="PantallaDeInicio.jpg", position = game.origin()){}
-object pantallaDeComoJugar inherits Pantalla(image="ComoJugar.jpg", position = game.origin()){}
-object pantallaDeCreditos inherits Pantalla(image="creditosEjemplo.jpg", position = game.origin()){}
+object pantallaConfig inherits Pantalla(image="pantallaConfiguracion.png", position =game.origin()){}
+object pantallaHistoria inherits Pantalla (image="pantallaHistoria.png", position = game.origin()){}
+object pantallaComoJugar inherits Pantalla(image="pantallaComoJugar.png", position = game.origin()){}
+object pantallaDeCreditos inherits Pantalla(image="pantallaCreditos.png", position = game.origin()){}
