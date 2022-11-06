@@ -16,11 +16,8 @@ object caballero {
 	
 	method agarrar(reliquia){
 		reliquias.add(reliquia)
-		if (reliquia == collar){
-			game.say(self, "Conseguí el collar!")
-		}else if (reliquia == anillo){
-			game.say(self, "Conseguí el anillo!")
-		}else {game.say(self, "Conseguí el diamante!")}
+			game.say(self, "Conseguí el " + reliquia) //!!!!!! quedó
+
 		game.removeVisual(reliquia) 
 	}
 
@@ -85,11 +82,11 @@ object enemigo {
 	
 
 	method perseguir(destino) {
-		
+
 		if (position.x()>destino.x()){
 			self.izquierda()
 		}
-		else if (position.x()<destino.x()){
+	else if (position.x()<destino.x()){
 			self.derecha()
 		}
 		else if (position.y()>destino.y()){
@@ -97,9 +94,8 @@ object enemigo {
 			
 		}
 		else if (position.y()<destino.y()){
-			self.subir()
+		self.subir()
 		}
-	
 		}
 	method volver(){
 		position = anterior
@@ -110,7 +106,7 @@ object enemigo {
 	method matar(){
 		game.say(self,"¡Moriste rey!")
 		game.addVisual(pantallaDerrota)
-		game.onTick(2000,"terminar", {pantallaDerrota.terminar()})
+		game.onTick(4000,"terminar", {pantallaDerrota.terminar()})
 	}
 	method subir(){
 		anterior = position
