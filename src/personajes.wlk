@@ -83,17 +83,17 @@ object enemigo {
 
 	method perseguir(destino) {
 
-		if (position.x()>destino.x()){
+		if (position.x()>destino.x() ||(position.x()-destino.x())== 1){
 			self.izquierda()
 		}
-	else if (position.x()<destino.x()){
+	else if (position.x()<destino.x()||(position.x()-destino.x())== 1){
 			self.derecha()
 		}
-		else if (position.y()>destino.y()){
+		else if (position.y()>destino.y()||(position.y()-destino.y())== 1){
 			self.bajar()
 			
 		}
-		else if (position.y()<destino.y()){
+		else if (position.y()<destino.y()||(position.y()-destino.y())== 1){
 		self.subir()
 		}
 		}
