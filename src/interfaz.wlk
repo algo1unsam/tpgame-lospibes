@@ -198,37 +198,3 @@ object laberinto {
 }
 
 
-
-
-
-//object pantallaDerrota{
-//	const property position = game.origin()
-//	method image() = "pantallaDerrota.png"
-//	method terminar() = game.stop()
-//	
-//}
-
-//object pantallaVictoria{
-//	const property position = game.origin()
-//	method image() = "fondoVictoria.png"
-//	method terminar(){game.stop()}
-//}
-//	
-//object textoCosas{
-//	const property position = game.at(12,3)
-//	method textColor() = paleta.negro()
-//	method text() {
-//		return	if (caballero.reliquias().isEmpty()){"Ninguno"}
-//		else if (caballero.reliquias().contains(collar)and(caballero.reliquias().contains(anillo))and(caballero.reliquias().contains(diamante))){"Collar, Anillo y Diamante"}
-//		else if (caballero.reliquias().contains(collar) and (caballero.reliquias().contains(anillo))){"Collar y Anillo"}
-//		else if (caballero.reliquias().contains(anillo) and (caballero.reliquias().contains(diamante))){"Anillo y Diamante"}
-//		else if (caballero.reliquias().contains(diamante)and(caballero.reliquias().contains(collar))) {"Collar y Diamante"}
-//		else if (caballero.reliquias().contains(collar)){"Collar"}
-//		else if (caballero.reliquias().contains(anillo)) {"Anillo"}
-//		else {"Diamante"}
-//}
-//		
-//		}
-//object paleta {
-//	const property negro = "#000000"
-//}
