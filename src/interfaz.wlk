@@ -111,11 +111,9 @@ object laberinto {
 		const largo = game.height() - 1
 
 //Posiciones de las piedras		
-		const listaDePosiciones = [game.at(1,3), game.at(2,3), game.at(3,3), game.at(3,4),
-			game.at(6,4), game.at(6,5), game.at(6,6), game.at(7,6), game.at(9,2),
-			game.at(10,2), game.at(10,3), game.at(11,5), game.at(14,6), game.at(15,6), 
-			game.at(16,6), game.at(17,6), game.at(18,6), game.at(16,3), game.at(17,3),
-			game.at(18,3)]
+		const listaDePosiciones = [game.at(1,4),game.at(2,2),game.at(3,2),game.at(3,4),game.at(4,4), game.at(5,4),game.at(5,5),
+			 game.at(4,7), game.at(4,8), game.at(10,5), game.at(10,6), game.at(10,7), game.at(11,5), game.at(14,2),
+			game.at(15,2)]
 		
 		
 		(1 .. ancho-1).forEach { x => new Ladrillo(position = new Position(x = x, y = 0)).dibujar() } // bordeAbajo
@@ -158,10 +156,10 @@ object laberinto {
 		const largo = game.height() - 1
 
 //Posiciones de las piedras		
-		const listaDePosiciones = [game.at(1,3), game.at(2,3), game.at(3,3), game.at(3,4),
-			game.at(6,4), game.at(6,5), game.at(6,6), game.at(7,6), game.at(9,2), game.at(10,3),
-			game.at(11,5), game.at(14,6), game.at(15,6), game.at(16,6), game.at(17,6), game.at(18,6),
-			game.at(16,3), game.at(17,3), game.at(18,3)]
+		const listaDePosiciones = [game.at(1,6), game.at(2,6),game.at(3,6), game.at(4,6),
+			game.at(5,6), game.at(6,6), game.at(7,6), game.at(8,6), game.at(9,6), game.at(10,6),
+			game.at(11,6), game.at(12,6), game.at(9,1), game.at(9,2), game.at(9,3),game.at(14,6), game.at(15,3),
+			game.at(15,4)]
 		
 		
 		(1 .. ancho-10).forEach { x => new Ladrillo(position = new Position(x = x, y = 0)).dibujar() } // bordeAbajo

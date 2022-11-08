@@ -24,25 +24,30 @@ object caballero {
 	method subir(){
 		anterior = position
 		position = position.up(1)
-		enemigo.perseguir(self.position())
+		game.schedule(200, { enemigo.perseguir(self.position()) })
+		game.schedule(300, { enemigo.perseguir(self.position()) })
 	}
 	
 	method derecha(){
 		anterior = position
 		position = position.right(1)
-		enemigo.perseguir(self.position())
+		game.schedule(200, { enemigo.perseguir(self.position()) })
+		game.schedule(300, { enemigo.perseguir(self.position()) })
 	}
 	
 	method izquierda(){
 		anterior = position
 		position = position.left(1)
-		enemigo.perseguir(self.position())
+		game.schedule(200, { enemigo.perseguir(self.position()) })
+		game.schedule(300, { enemigo.perseguir(self.position()) })
+
 	}
 	
 	method bajar(){
 		anterior = position
 		position = position.down(1)
-		enemigo.perseguir(self.position())
+		game.schedule(200, { enemigo.perseguir(self.position()) })
+		game.schedule(300, { enemigo.perseguir(self.position()) })
 	}
 	
 	method volver(){
@@ -83,17 +88,16 @@ object enemigo {
 
 	method perseguir(destino) {
 
-		if (position.x()>destino.x() ||(position.x()-destino.x())== 1){
+		if (position.x()>destino.x()){
 			self.izquierda()
 		}
-	else if (position.x()<destino.x()||(position.x()-destino.x())== 1){
+		else if (position.x()<destino.x()){
 			self.derecha()
 		}
-		else if (position.y()>destino.y()||(position.y()-destino.y())== 1){
+		else if (position.y()>destino.y()){
 			self.bajar()
-			
 		}
-		else if (position.y()<destino.y()||(position.y()-destino.y())== 1){
+		else if (position.y()<destino.y()){
 		self.subir()
 		}
 		}

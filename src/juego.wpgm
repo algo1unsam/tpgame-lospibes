@@ -5,5 +5,5 @@ program juego {
 	laberinto.configurar()
 	game.start()
 	
-}
+} 
 
