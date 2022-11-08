@@ -1,8 +1,9 @@
 import wollok.game.*
-import pepita.*
+import interfaz.*
 
 program juego {
-	game.title("Juego Base")
-	game.addVisual(pepita)
+	laberinto.configurar()
 	game.start()
-}
+	 
+} 
+
