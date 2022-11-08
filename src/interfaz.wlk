@@ -189,6 +189,7 @@ object laberinto {
 	}
 	
 	method reiniciarPosiciones(){
+		caballero.vaciarReliquias()
 		caballero.reiniciarPosicion()
 		enemigo.reiniciarPosicion()
 		salida.reiniciarPosicion()

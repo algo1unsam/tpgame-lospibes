@@ -76,6 +76,10 @@ object caballero {
 		game.addVisual(textoCosas)
 		game.onTick(5000,"terminar", {pantallaVictoria.terminar()})
 	}
+	
+		method vaciarReliquias(){
+		reliquias.clear()
+	}
 
 	method matar(){}
 }
@@ -148,6 +152,7 @@ object enemigo {
 	method reiniciarPosicion() {
 		position = posicionNivel1 
 	}
+	
 	
 }
 
