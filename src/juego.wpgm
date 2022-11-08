@@ -4,6 +4,6 @@ import interfaz.*
 program juego {
 	laberinto.configurar()
 	game.start()
-	
+	 
 } 
 

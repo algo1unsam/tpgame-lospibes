@@ -21,6 +21,7 @@ class Muro inherits Ladrillo {
 }
 
 object salida inherits Ladrillo(position = game.at(19,5), image = 'salida.png') {
+	const posicionNivel1 = game.at(19,5)
 	const posicionNivel2 = game.at(0,8)
 	const posicionNivel3 = game.at(10,0)
 	method cambiarPosicionInicial(){
@@ -30,6 +31,10 @@ object salida inherits Ladrillo(position = game.at(19,5), image = 'salida.png') 
 	method cambiarPosicionNivel3(){
 		position = posicionNivel3
 		image = "SalidaFinal.png"
+	}
+	method reiniciarPosicion(){
+		position = posicionNivel1
+		image = "salida.png"
 	}
 	override method colisionar(colisionado){
 		

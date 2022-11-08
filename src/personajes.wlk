@@ -1,13 +1,16 @@
 import wollok.game.*
 import interfaz.*
 import accesorios.*
+import pantallas.*
 
 
 object caballero {
 
 	var property position = game.at(1,1)
+	const posicionNivel1 = game.at(1,1)
 	const posicionNivel2 = game.at(18,5)
 	const posicionNivel3 = game.at(1,8)
+	
 	var property reliquias = []
 	var anterior
 	
@@ -17,7 +20,6 @@ object caballero {
 	method agarrar(reliquia){
 		reliquias.add(reliquia)
 			game.say(self, "Conseguí el " + reliquia) //!!!!!! quedó
-
 		game.removeVisual(reliquia) 
 	}
 
@@ -65,6 +67,9 @@ object caballero {
 	method cambiarPosicionNivel3(){
 		position = posicionNivel3
 	}
+	method reiniciarPosicion() {
+		position = posicionNivel1 
+	}
 	
 	method escapar(){
 		game.addVisual(pantallaVictoria)
@@ -73,11 +78,11 @@ object caballero {
 	}
 
 	method matar(){}
-	method perseguir(){enemigo.perseguir(self.position())}
 }
 
 object enemigo {
 	var property position = game.at(17,5)
+	const posicionNivel1 = game.at(17,5)
 	const posicionNivel2 = game.at(2,8)
 	const posicionNivel3 = game.at(10,2)
 	var anterior
@@ -108,7 +113,6 @@ object enemigo {
 	method colisionar(colisionado){}
 	
 	method matar(){
-		game.say(self,"¡Moriste rey!")
 		game.addVisual(pantallaDerrota)
 		game.onTick(4000,"terminar", {pantallaDerrota.terminar()})
 	}
@@ -140,6 +144,9 @@ object enemigo {
 	}
 	method cambiarPosicionNivel3(){
 		position = posicionNivel3
+	}
+	method reiniciarPosicion() {
+		position = posicionNivel1 
 	}
 	
 }

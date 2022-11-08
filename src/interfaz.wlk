@@ -5,6 +5,7 @@ import accesorios.*
 import pantallas.*
 
 object laberinto {
+	var probarDeNuevo = 0
 	method configurar(){
 		game.clear()
 		game.width(20)
@@ -22,9 +23,11 @@ object laberinto {
 	}
 		
 	method iniciarJuego(){
-		const suspenso = game.sound("musicaSuspenso.mp3")
+
+		if (probarDeNuevo == 0){const suspenso = game.sound("musicaSuspenso.mp3")
 		suspenso.shouldLoop(true)
-		game.schedule(500, { suspenso.play()} )
+		game.schedule(400, {suspenso.play()})}
+		probarDeNuevo += 1
 		
 		game.removeVisual(pantallaDeInicio)
 		game.addVisual(caballero)
@@ -111,7 +114,7 @@ object laberinto {
 		const largo = game.height() - 1
 
 //Posiciones de las piedras		
-		const listaDePosiciones = [game.at(1,4),game.at(2,2),game.at(3,2),game.at(3,4),game.at(4,4), game.at(5,4),game.at(5,5),
+		const listaDePosiciones = [game.at(2,2),game.at(3,2),game.at(3,4),game.at(4,4), game.at(5,4),game.at(5,5),
 			 game.at(4,7), game.at(4,8), game.at(10,5), game.at(10,6), game.at(10,7), game.at(11,5), game.at(14,2),
 			game.at(15,2)]
 		
@@ -184,40 +187,47 @@ object laberinto {
 		game.onCollideDo(caballero, {elemento => elemento.colisionar(caballero)})
 		
 	}
-}
-
-
-
-
-
-object pantallaDerrota{
-	const property position = game.origin()
-	method image() = "pantallaDerrota.png"
-	method terminar() = game.stop()
+	
+	method reiniciarPosiciones(){
+		caballero.reiniciarPosicion()
+		enemigo.reiniciarPosicion()
+		salida.reiniciarPosicion()
+	}
 	
 }
 
-object pantallaVictoria{
-	const property position = game.origin()
-	method image() = "fondoVictoria.png"
-	method terminar(){game.stop()}
-}
-	
-object textoCosas{
-	const property position = game.at(12,3)
-	method textColor() = paleta.negro()
-	method text() { 
-		return	if (caballero.reliquias().isEmpty()){"Ninguno"}
-		else if (caballero.reliquias().contains(collar)and(caballero.reliquias().contains(anillo))and(caballero.reliquias().contains(diamante))){"Collar, Anillo y Diamante"}
-		else if (caballero.reliquias().contains(collar) and (caballero.reliquias().contains(anillo))){"Collar y Anillo"}
-		else if (caballero.reliquias().contains(anillo) and (caballero.reliquias().contains(diamante))){"Anillo y Diamante"}
-		else if (caballero.reliquias().contains(diamante)and(caballero.reliquias().contains(collar))) {"Collar y Diamante"}
-		else if (caballero.reliquias().contains(collar)){"Collar"}
-		else if (caballero.reliquias().contains(anillo)) {"Anillo"}
-		else {"Diamante"}
-		}
-		
-		}
-object paleta {
-	const property negro = "#000000"
-}
+
+
+
+
+//object pantallaDerrota{
+//	const property position = game.origin()
+//	method image() = "pantallaDerrota.png"
+//	method terminar() = game.stop()
+//	
+//}
+
+//object pantallaVictoria{
+//	const property position = game.origin()
+//	method image() = "fondoVictoria.png"
+//	method terminar(){game.stop()}
+//}
+//	
+//object textoCosas{
+//	const property position = game.at(12,3)
+//	method textColor() = paleta.negro()
+//	method text() {
+//		return	if (caballero.reliquias().isEmpty()){"Ninguno"}
+//		else if (caballero.reliquias().contains(collar)and(caballero.reliquias().contains(anillo))and(caballero.reliquias().contains(diamante))){"Collar, Anillo y Diamante"}
+//		else if (caballero.reliquias().contains(collar) and (caballero.reliquias().contains(anillo))){"Collar y Anillo"}
+//		else if (caballero.reliquias().contains(anillo) and (caballero.reliquias().contains(diamante))){"Anillo y Diamante"}
+//		else if (caballero.reliquias().contains(diamante)and(caballero.reliquias().contains(collar))) {"Collar y Diamante"}
+//		else if (caballero.reliquias().contains(collar)){"Collar"}
+//		else if (caballero.reliquias().contains(anillo)) {"Anillo"}
+//		else {"Diamante"}
+//}
+//		
+//		}
+//object paleta {
+//	const property negro = "#000000"
+//}
